@@ -15,7 +15,8 @@
     "static",
     "html",
     "template",
-    "nunjucks"
+    "nunjucks",
+    "gulpplugin"
   ],
   "author": "Jason Jiang <jasonlikenfs@gmail.com>",
   "license": "MIT",
@@ -24,9 +25,11 @@
   },
   "homepage": "https://github.com/JasonBoy/gulp-static-html#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
     "nunjucks": "^2.4.2"
   },
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp-util": "^3.0.7",
+    "through2": "^2.0.1"
   }
 }
