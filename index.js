@@ -13,12 +13,13 @@ function gulpStaticHtml(context, options) {
       cb(new PluginError('gulp-static-html', 'Streaming not supported'));
       return;
     }
+    console.log(file.base, file.path);
     var env = (options && options.env) || new nunjucks.Environment(new nunjucks.FileSystemLoader(file.base), options);
 
     try {
       file.contents = new Buffer(env.renderString(file.contents.toString(), context));
     } catch (err) {
-      this.emit('error', PluginError('gulp-nunjucks', err, {fileName: file.path}));
+      this.emit('error', PluginError('gulp-static-html', err, {fileName: file.path}));
     }
 
     cb(null, file);
